@@ -11,3 +11,17 @@ declare namespace App {
 
 	interface Stuff {}
 }
+
+interface group {
+	name: string;
+	description: string;
+	year: 1 | 2 | 3 | 4;
+	semester: 1 | 2;
+	specialization: string;
+	batch: 'WE' | 'WD' | 'Mix';
+	max: number;
+	available: number;
+	leaderName: string;
+	leaderPhone: string;
+	leaderEamil: string;
+}
