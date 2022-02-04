@@ -1,4 +1,4 @@
-<a href="/new">
+<a href="/profile/new">
 	<div
 		class=" fixed bottom-2 right-2 w-12 h-12 rounded-full bg-sky-500 flex items-center justify-center text-4xl leading-none shadow-2xl hover:scale-105"
 	>

@@ -4,14 +4,6 @@
 	import { onMount } from 'svelte';
 	import { auth } from '../ts/firebase';
 	import Nav from '$lib/components/Nav.svelte';
-
-	onMount(() => {
-		auth.onAuthStateChanged((user) => {
-			if (!user) {
-				goto('/login');
-			}
-		});
-	});
 </script>
 
 <div>

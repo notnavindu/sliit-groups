@@ -3,9 +3,9 @@
 		<div class="flex items-center gap-2 font-bold leading-4 tracking-wide">
 			<a href="/">
 				<div class="w-full h-full flex text-center justify-center">
-					<div class="w-8 h-8 bg-sky-800 rounded-full animate-pulse" />
+					<div class="w-8 h-8 bg-sky-800 rounded-full animate-pulse delay-500" />
 					<div class="absolute w-8 h-8 flex items-center justify-center">
-						<div class="h-6 w-6 bg-sky-500 rounded-full animate-pulse" />
+						<div class="h-6 w-6 bg-sky-500 rounded-full animate-pulse delay-75" />
 					</div>
 					<div class="absolute w-8 h-8 flex items-center justify-center">
 						<div class="h-4 w-4 bg-sky-300 rounded-full" />

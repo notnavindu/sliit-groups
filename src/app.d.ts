@@ -22,6 +22,6 @@ interface group {
 	max: number;
 	available: number;
 	leaderName: string;
-	leaderPhone: string;
-	leaderEamil: string;
+	leaderPhone: number;
+	leaderEmail: string;
 }

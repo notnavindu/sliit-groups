@@ -2,8 +2,13 @@
 	import Group from '$lib/components/Group.svelte';
 	import TextInput from '$lib/components/TextInput.svelte';
 
+	import { auth, firestore } from '../../ts/firebase';
+	import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
+	import { goto } from '$app/navigation';
+	import { emailRegex } from '$lib/constants/regex';
+
 	let values: group = {
-		name: '',
+		name: null,
 		description: null,
 		year: null,
 		semester: null,
@@ -13,7 +18,60 @@
 		available: 0,
 		leaderName: null,
 		leaderPhone: null,
-		leaderEamil: null
+		leaderEmail: null
+	};
+
+	let error = null;
+	let loading = false;
+
+	const submit = async () => {
+		error = null;
+		if (
+			!values.name ||
+			!values.description ||
+			!values.year ||
+			!values.semester ||
+			!values.specialization ||
+			!values.batch ||
+			values.max <= 0 ||
+			values.available <= 0 ||
+			!values.leaderName ||
+			!values.leaderEmail ||
+			!values.leaderPhone
+		) {
+			error = 'Fill all fields!';
+			return;
+		}
+
+		if (values.available > values.max) {
+			error = 'Available slots should be smaller than maximum';
+			return;
+		}
+
+		if (String(values.leaderPhone).length !== 10) {
+			error = 'Phone number must be 10 digits';
+			return;
+		}
+
+		if (!String(values.leaderEmail).match(emailRegex)) {
+			error = 'Invalid Email';
+			return;
+		}
+
+		try {
+			loading = true;
+			addDoc(collection(firestore, 'groups'), {
+				...values,
+				uid: auth.currentUser.uid,
+				time: serverTimestamp(),
+				promoted: false
+			}).then(() => {
+				goto('/');
+			});
+		} catch (e) {
+			console.error('Error adding document: ', e);
+			loading = false;
+		}
 	};
 </script>
 
@@ -23,7 +81,6 @@
 
 <label class="flex flex-col mt-8 gap-2">
 	<span class="text-sky-500">Group Description</span>
-	<!-- TODO: length check-->
 	<textarea
 		bind:value={values.description}
 		placeholder="About, Requirements, Team Culture..."
@@ -75,18 +132,34 @@
 />
 <TextInput
 	label="Team Leader Phone Number"
+	type="text"
 	placeholder="071 234 3432"
 	bind:value={values.leaderPhone}
 />
 <TextInput
 	label="Team Leader Email"
 	placeholder="semicee@gmail.com"
-	bind:value={values.leaderEamil}
+	bind:value={values.leaderEmail}
 />
 
 <div class="text-xl text-sky-500 font-bold mt-8 mb-4">Preview</div>
 
 <Group {values} />
+
+{#if error}
+	<div class="mt-4 mb-2 text-red-500 w-full text-center">{error}</div>
+{/if}
+
+<button
+	class=" w-full bg-gradient-to-r from-sky-500 to-sky-700 px-3 py-3 mb-8 mt-4 rounded-md font-bold flex justify-center items-center gap-2"
+	class:bg-zinc-500={loading}
+	class:pointer-events-none={loading}
+	disabled={loading}
+	on:click={submit}
+>
+	<div class="absolute w-6 h-6 bg-white rounded-full animate-ping" class:hidden={!loading} />
+	<div class:opacity-0={loading}>Submit</div>
+</button>
 
 <style lang="postcss">
 	.select {

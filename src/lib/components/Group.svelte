@@ -2,9 +2,9 @@
 	export let values: group;
 </script>
 
-<div class="w-full p-3 rounded-md border border-sky-700">
+<div class="w-full bg-zinc-800 p-3 rounded-md border border-sky-700">
 	<div class="flex justify-between gap-4">
-		<div class="font-bold text-lg leading-6">{values?.name}</div>
+		<div class="font-bold text-lg leading-6">{values?.name || ''}</div>
 	</div>
 
 	<div class="flex flex-wrap gap-1 mt-2">
@@ -23,7 +23,7 @@
 			<div class="font-bold uppercase text-sky-500">Contact</div>
 			<div>{values?.leaderName || ''}</div>
 			<div>{values?.leaderPhone || ''}</div>
-			<div>{values?.leaderEamil || ''}</div>
+			<div>{values?.leaderEmail || ''}</div>
 		</div>
 
 		<div class="flex flex-col items-center justify-center text-red-400">
