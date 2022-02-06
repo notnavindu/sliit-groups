@@ -6,6 +6,8 @@
 	import { onMount } from 'svelte';
 	import Delete from '$lib/icons/delete.icon.svelte';
 	import NewFab from '$lib/components/NewFab.svelte';
+	import Edit from '$lib/icons/edit.icon.svelte';
+	import { goto } from '$app/navigation';
 
 	let data;
 	let loading = true;
@@ -37,6 +39,13 @@
 
 <div class:blur-sm={loading}>
 	{#if data}
+		{#if data.length === 0}
+			<div class="mt-8 text-zinc-600">
+				<div>You haven't created any groups</div>
+				<div>You can create one <a href="/profile/new" class="text-sky-500">here.</a></div>
+			</div>
+		{/if}
+
 		{#each data as item}
 			<div class="w-full px-3 py-2 bg-zinc-800 mt-2 rounded-md flex gap-5 justify-between">
 				<div>
@@ -45,11 +54,19 @@
 					</div>
 					<div class="text-xs text-zinc-300">{item.description}</div>
 				</div>
-				<div
-					class="w-4 flex items-center justify-center text-red-500 cursor-pointer"
-					on:click={() => deleteGroup(item.id)}
-				>
-					<Delete />
+				<div class="flex gap-4">
+					<div
+						class="w-4 flex items-center justify-center text-white cursor-pointer"
+						on:click={() => goto(`/profile/edit/${item.id}`)}
+					>
+						<Edit />
+					</div>
+					<div
+						class="w-4 flex items-center justify-center text-red-500 cursor-pointer"
+						on:click={() => deleteGroup(item.id)}
+					>
+						<Delete />
+					</div>
 				</div>
 			</div>
 		{/each}

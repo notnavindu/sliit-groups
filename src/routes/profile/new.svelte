@@ -6,6 +6,7 @@
 	import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 	import { goto } from '$app/navigation';
 	import { emailRegex } from '$lib/constants/regex';
+	import Button from '$lib/components/Button.svelte';
 
 	let values: group = {
 		name: null,
@@ -89,8 +90,8 @@
 </label>
 
 <div class="w-full flex items-end gap-6">
-	<TextInput label="Maximum No. of members" type="number" bind:value={values.max} placeholder="4" />
 	<TextInput label="Available Slots" type="number" placeholder="3" bind:value={values.available} />
+	<TextInput label="Maximum No. of members" type="number" bind:value={values.max} placeholder="4" />
 </div>
 
 <div class="mt-8 text-sky-500 ">Academic Year</div>
@@ -150,16 +151,7 @@
 	<div class="mt-4 mb-2 text-red-500 w-full text-center">{error}</div>
 {/if}
 
-<button
-	class=" w-full bg-gradient-to-r from-sky-500 to-sky-700 px-3 py-3 mb-8 mt-4 rounded-md font-bold flex justify-center items-center gap-2"
-	class:bg-zinc-500={loading}
-	class:pointer-events-none={loading}
-	disabled={loading}
-	on:click={submit}
->
-	<div class="absolute w-6 h-6 bg-white rounded-full animate-ping" class:hidden={!loading} />
-	<div class:opacity-0={loading}>Submit</div>
-</button>
+<Button {loading} on:click={submit}>Submit</Button>
 
 <style lang="postcss">
 	.select {
