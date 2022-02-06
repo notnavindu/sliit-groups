@@ -1,0 +1,322 @@
+{
+  "0 debug pnpm:scope": {
+    "selected": 1
+  },
+  "1 debug pnpm:package-manifest": {
+    "initial": {
+      "name": "sliit-groups",
+      "version": "0.0.1",
+      "scripts": {
+        "dev": "svelte-kit dev",
+        "dev:host": "svelte-kit dev --host",
+        "build": "svelte-kit build",
+        "package": "svelte-kit package",
+        "preview": "svelte-kit preview",
+        "check": "svelte-check --tsconfig ./tsconfig.json",
+        "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
+        "lint": "prettier --ignore-path .gitignore --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
+        "format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. ."
+      },
+      "devDependencies": {
+        "@sveltejs/adapter-auto": "next",
+        "@sveltejs/kit": "next",
+        "@typescript-eslint/eslint-plugin": "^5.10.1",
+        "@typescript-eslint/parser": "^5.10.1",
+        "autoprefixer": "^10.4.2",
+        "eslint": "^7.32.0",
+        "eslint-config-prettier": "^8.3.0",
+        "eslint-plugin-svelte3": "^3.2.1",
+        "postcss": "^8.4.6",
+        "prettier": "^2.4.1",
+        "prettier-plugin-svelte": "^2.4.0",
+        "svelte": "^3.44.0",
+        "svelte-check": "^2.2.6",
+        "svelte-preprocess": "^4.9.4",
+        "tailwindcss": "^3.0.18",
+        "tslib": "^2.3.1",
+        "typescript": "^4.4.3"
+      },
+      "type": "module",
+      "dependencies": {
+        "firebase": "^9.6.5"
+      }
+    },
+    "prefix": "E:\\sliit-groups"
+  },
+  "2 debug pnpm:context": {
+    "currentLockfileExists": false,
+    "storeDir": "E:\\.pnpm-store\\v3",
+    "virtualStoreDir": "E:\\sliit-groups\\node_modules\\.pnpm"
+  },
+  "3 info pnpm": {
+    "message": "Lockfile is up-to-date, resolution step is skipped",
+    "prefix": "E:\\sliit-groups"
+  },
+  "4 debug pnpm:stats": {
+    "prefix": "E:\\sliit-groups",
+    "removed": 0
+  },
+  "5 debug pnpm:stage": {
+    "prefix": "E:\\sliit-groups",
+    "stage": "importing_started"
+  },
+  "6 warn pnpm:install-check": {
+    "message": "Unsupported platform for /esbuild-android-arm64/0.13.15: wanted {\"cpu\":[\"arm64\"],\"os\":[\"android\"]} (current: {\"os\":\"win32\",\"cpu\":\"x64\"})",
+    "prefix": "E:\\sliit-groups"
+  },
+  "7 debug pnpm:skipped-optional-dependency": {
+    "details": "Error: Unsupported platform for /esbuild-android-arm64/0.13.15: wanted {\"cpu\":[\"arm64\"],\"os\":[\"android\"]} (current: {\"os\":\"win32\",\"cpu\":\"x64\"})",
+    "package": {
+      "id": "/esbuild-android-arm64/0.13.15",
+      "name": "esbuild-android-arm64",
+      "version": "0.13.15"
+    },
+    "prefix": "E:\\sliit-groups",
+    "reason": "unsupported_platform"
+  },
+  "8 warn pnpm:install-check": {
+    "message": "Unsupported platform for /esbuild-darwin-64/0.13.15: wanted {\"cpu\":[\"x64\"],\"os\":[\"darwin\"]} (current: {\"os\":\"win32\",\"cpu\":\"x64\"})",
+    "prefix": "E:\\sliit-groups"
+  },
+  "9 debug pnpm:skipped-optional-dependency": {
+    "details": "Error: Unsupported platform for /esbuild-darwin-64/0.13.15: wanted {\"cpu\":[\"x64\"],\"os\":[\"darwin\"]} (current: {\"os\":\"win32\",\"cpu\":\"x64\"})",
+    "package": {
+      "id": "/esbuild-darwin-64/0.13.15",
+      "name": "esbuild-darwin-64",
+      "version": "0.13.15"
+    },
+    "prefix": "E:\\sliit-groups",
+    "reason": "unsupported_platform"
+  },
+  "10 warn pnpm:install-check": {
+    "message": "Unsupported platform for /esbuild-darwin-arm64/0.13.15: wanted {\"cpu\":[\"arm64\"],\"os\":[\"darwin\"]} (current: {\"os\":\"win32\",\"cpu\":\"x64\"})",
+    "prefix": "E:\\sliit-groups"
+  },
+  "11 debug pnpm:skipped-optional-dependency": {
+    "details": "Error: Unsupported platform for /esbuild-darwin-arm64/0.13.15: wanted {\"cpu\":[\"arm64\"],\"os\":[\"darwin\"]} (current: {\"os\":\"win32\",\"cpu\":\"x64\"})",
+    "package": {
+      "id": "/esbuild-darwin-arm64/0.13.15",
+      "name": "esbuild-darwin-arm64",
+      "version": "0.13.15"
+    },
+    "prefix": "E:\\sliit-groups",
+    "reason": "unsupported_platform"
+  },
+  "12 warn pnpm:install-check": {
+    "message": "Unsupported platform for /esbuild-freebsd-64/0.13.15: wanted {\"cpu\":[\"x64\"],\"os\":[\"freebsd\"]} (current: {\"os\":\"win32\",\"cpu\":\"x64\"})",
+    "prefix": "E:\\sliit-groups"
+  },
+  "13 debug pnpm:skipped-optional-dependency": {
+    "details": "Error: Unsupported platform for /esbuild-freebsd-64/0.13.15: wanted {\"cpu\":[\"x64\"],\"os\":[\"freebsd\"]} (current: {\"os\":\"win32\",\"cpu\":\"x64\"})",
+    "package": {
+      "id": "/esbuild-freebsd-64/0.13.15",
+      "name": "esbuild-freebsd-64",
+      "version": "0.13.15"
+    },
+    "prefix": "E:\\sliit-groups",
+    "reason": "unsupported_platform"
+  },
+  "14 warn pnpm:install-check": {
+    "message": "Unsupported platform for /esbuild-freebsd-arm64/0.13.15: wanted {\"cpu\":[\"arm64\"],\"os\":[\"freebsd\"]} (current: {\"os\":\"win32\",\"cpu\":\"x64\"})",
+    "prefix": "E:\\sliit-groups"
+  },
+  "15 debug pnpm:skipped-optional-dependency": {
+    "details": "Error: Unsupported platform for /esbuild-freebsd-arm64/0.13.15: wanted {\"cpu\":[\"arm64\"],\"os\":[\"freebsd\"]} (current: {\"os\":\"win32\",\"cpu\":\"x64\"})",
+    "package": {
+      "id": "/esbuild-freebsd-arm64/0.13.15",
+      "name": "esbuild-freebsd-arm64",
+      "version": "0.13.15"
+    },
+    "prefix": "E:\\sliit-groups",
+    "reason": "unsupported_platform"
+  },
+  "16 warn pnpm:install-check": {
+    "message": "Unsupported platform for /esbuild-linux-32/0.13.15: wanted {\"cpu\":[\"ia32\"],\"os\":[\"linux\"]} (current: {\"os\":\"win32\",\"cpu\":\"x64\"})",
+    "prefix": "E:\\sliit-groups"
+  },
+  "17 debug pnpm:skipped-optional-dependency": {
+    "details": "Error: Unsupported platform for /esbuild-linux-32/0.13.15: wanted {\"cpu\":[\"ia32\"],\"os\":[\"linux\"]} (current: {\"os\":\"win32\",\"cpu\":\"x64\"})",
+    "package": {
+      "id": "/esbuild-linux-32/0.13.15",
+      "name": "esbuild-linux-32",
+      "version": "0.13.15"
+    },
+    "prefix": "E:\\sliit-groups",
+    "reason": "unsupported_platform"
+  },
+  "18 warn pnpm:install-check": {
+    "message": "Unsupported platform for /esbuild-linux-64/0.13.15: wanted {\"cpu\":[\"x64\"],\"os\":[\"linux\"]} (current: {\"os\":\"win32\",\"cpu\":\"x64\"})",
+    "prefix": "E:\\sliit-groups"
+  },
+  "19 debug pnpm:skipped-optional-dependency": {
+    "details": "Error: Unsupported platform for /esbuild-linux-64/0.13.15: wanted {\"cpu\":[\"x64\"],\"os\":[\"linux\"]} (current: {\"os\":\"win32\",\"cpu\":\"x64\"})",
+    "package": {
+      "id": "/esbuild-linux-64/0.13.15",
+      "name": "esbuild-linux-64",
+      "version": "0.13.15"
+    },
+    "prefix": "E:\\sliit-groups",
+    "reason": "unsupported_platform"
+  },
+  "20 warn pnpm:install-check": {
+    "message": "Unsupported platform for /esbuild-linux-arm/0.13.15: wanted {\"cpu\":[\"arm\"],\"os\":[\"linux\"]} (current: {\"os\":\"win32\",\"cpu\":\"x64\"})",
+    "prefix": "E:\\sliit-groups"
+  },
+  "21 debug pnpm:skipped-optional-dependency": {
+    "details": "Error: Unsupported platform for /esbuild-linux-arm/0.13.15: wanted {\"cpu\":[\"arm\"],\"os\":[\"linux\"]} (current: {\"os\":\"win32\",\"cpu\":\"x64\"})",
+    "package": {
+      "id": "/esbuild-linux-arm/0.13.15",
+      "name": "esbuild-linux-arm",
+      "version": "0.13.15"
+    },
+    "prefix": "E:\\sliit-groups",
+    "reason": "unsupported_platform"
+  },
+  "22 warn pnpm:install-check": {
+    "message": "Unsupported platform for /esbuild-linux-arm64/0.13.15: wanted {\"cpu\":[\"arm64\"],\"os\":[\"linux\"]} (current: {\"os\":\"win32\",\"cpu\":\"x64\"})",
+    "prefix": "E:\\sliit-groups"
+  },
+  "23 debug pnpm:skipped-optional-dependency": {
+    "details": "Error: Unsupported platform for /esbuild-linux-arm64/0.13.15: wanted {\"cpu\":[\"arm64\"],\"os\":[\"linux\"]} (current: {\"os\":\"win32\",\"cpu\":\"x64\"})",
+    "package": {
+      "id": "/esbuild-linux-arm64/0.13.15",
+      "name": "esbuild-linux-arm64",
+      "version": "0.13.15"
+    },
+    "prefix": "E:\\sliit-groups",
+    "reason": "unsupported_platform"
+  },
+  "24 warn pnpm:install-check": {
+    "message": "Unsupported platform for /esbuild-linux-mips64le/0.13.15: wanted {\"cpu\":[\"mips64el\"],\"os\":[\"linux\"]} (current: {\"os\":\"win32\",\"cpu\":\"x64\"})",
+    "prefix": "E:\\sliit-groups"
+  },
+  "25 debug pnpm:skipped-optional-dependency": {
+    "details": "Error: Unsupported platform for /esbuild-linux-mips64le/0.13.15: wanted {\"cpu\":[\"mips64el\"],\"os\":[\"linux\"]} (current: {\"os\":\"win32\",\"cpu\":\"x64\"})",
+    "package": {
+      "id": "/esbuild-linux-mips64le/0.13.15",
+      "name": "esbuild-linux-mips64le",
+      "version": "0.13.15"
+    },
+    "prefix": "E:\\sliit-groups",
+    "reason": "unsupported_platform"
+  },
+  "26 warn pnpm:install-check": {
+    "message": "Unsupported platform for /esbuild-linux-ppc64le/0.13.15: wanted {\"cpu\":[\"ppc64\"],\"os\":[\"linux\"]} (current: {\"os\":\"win32\",\"cpu\":\"x64\"})",
+    "prefix": "E:\\sliit-groups"
+  },
+  "27 debug pnpm:skipped-optional-dependency": {
+    "details": "Error: Unsupported platform for /esbuild-linux-ppc64le/0.13.15: wanted {\"cpu\":[\"ppc64\"],\"os\":[\"linux\"]} (current: {\"os\":\"win32\",\"cpu\":\"x64\"})",
+    "package": {
+      "id": "/esbuild-linux-ppc64le/0.13.15",
+      "name": "esbuild-linux-ppc64le",
+      "version": "0.13.15"
+    },
+    "prefix": "E:\\sliit-groups",
+    "reason": "unsupported_platform"
+  },
+  "28 warn pnpm:install-check": {
+    "message": "Unsupported platform for /esbuild-netbsd-64/0.13.15: wanted {\"cpu\":[\"x64\"],\"os\":[\"netbsd\"]} (current: {\"os\":\"win32\",\"cpu\":\"x64\"})",
+    "prefix": "E:\\sliit-groups"
+  },
+  "29 debug pnpm:skipped-optional-dependency": {
+    "details": "Error: Unsupported platform for /esbuild-netbsd-64/0.13.15: wanted {\"cpu\":[\"x64\"],\"os\":[\"netbsd\"]} (current: {\"os\":\"win32\",\"cpu\":\"x64\"})",
+    "package": {
+      "id": "/esbuild-netbsd-64/0.13.15",
+      "name": "esbuild-netbsd-64",
+      "version": "0.13.15"
+    },
+    "prefix": "E:\\sliit-groups",
+    "reason": "unsupported_platform"
+  },
+  "30 warn pnpm:install-check": {
+    "message": "Unsupported platform for /esbuild-openbsd-64/0.13.15: wanted {\"cpu\":[\"x64\"],\"os\":[\"openbsd\"]} (current: {\"os\":\"win32\",\"cpu\":\"x64\"})",
+    "prefix": "E:\\sliit-groups"
+  },
+  "31 debug pnpm:skipped-optional-dependency": {
+    "details": "Error: Unsupported platform for /esbuild-openbsd-64/0.13.15: wanted {\"cpu\":[\"x64\"],\"os\":[\"openbsd\"]} (current: {\"os\":\"win32\",\"cpu\":\"x64\"})",
+    "package": {
+      "id": "/esbuild-openbsd-64/0.13.15",
+      "name": "esbuild-openbsd-64",
+      "version": "0.13.15"
+    },
+    "prefix": "E:\\sliit-groups",
+    "reason": "unsupported_platform"
+  },
+  "32 warn pnpm:install-check": {
+    "message": "Unsupported platform for /esbuild-sunos-64/0.13.15: wanted {\"cpu\":[\"x64\"],\"os\":[\"sunos\"]} (current: {\"os\":\"win32\",\"cpu\":\"x64\"})",
+    "prefix": "E:\\sliit-groups"
+  },
+  "33 debug pnpm:skipped-optional-dependency": {
+    "details": "Error: Unsupported platform for /esbuild-sunos-64/0.13.15: wanted {\"cpu\":[\"x64\"],\"os\":[\"sunos\"]} (current: {\"os\":\"win32\",\"cpu\":\"x64\"})",
+    "package": {
+      "id": "/esbuild-sunos-64/0.13.15",
+      "name": "esbuild-sunos-64",
+      "version": "0.13.15"
+    },
+    "prefix": "E:\\sliit-groups",
+    "reason": "unsupported_platform"
+  },
+  "34 warn pnpm:install-check": {
+    "message": "Unsupported platform for /esbuild-windows-32/0.13.15: wanted {\"cpu\":[\"ia32\"],\"os\":[\"win32\"]} (current: {\"os\":\"win32\",\"cpu\":\"x64\"})",
+    "prefix": "E:\\sliit-groups"
+  },
+  "35 debug pnpm:skipped-optional-dependency": {
+    "details": "Error: Unsupported platform for /esbuild-windows-32/0.13.15: wanted {\"cpu\":[\"ia32\"],\"os\":[\"win32\"]} (current: {\"os\":\"win32\",\"cpu\":\"x64\"})",
+    "package": {
+      "id": "/esbuild-windows-32/0.13.15",
+      "name": "esbuild-windows-32",
+      "version": "0.13.15"
+    },
+    "prefix": "E:\\sliit-groups",
+    "reason": "unsupported_platform"
+  },
+  "36 warn pnpm:install-check": {
+    "message": "Unsupported platform for /esbuild-windows-arm64/0.13.15: wanted {\"cpu\":[\"arm64\"],\"os\":[\"win32\"]} (current: {\"os\":\"win32\",\"cpu\":\"x64\"})",
+    "prefix": "E:\\sliit-groups"
+  },
+  "37 debug pnpm:skipped-optional-dependency": {
+    "details": "Error: Unsupported platform for /esbuild-windows-arm64/0.13.15: wanted {\"cpu\":[\"arm64\"],\"os\":[\"win32\"]} (current: {\"os\":\"win32\",\"cpu\":\"x64\"})",
+    "package": {
+      "id": "/esbuild-windows-arm64/0.13.15",
+      "name": "esbuild-windows-arm64",
+      "version": "0.13.15"
+    },
+    "prefix": "E:\\sliit-groups",
+    "reason": "unsupported_platform"
+  },
+  "38 warn pnpm:install-check": {
+    "message": "Unsupported platform for /fsevents/2.3.2: wanted {\"cpu\":[\"any\"],\"os\":[\"darwin\"]} (current: {\"os\":\"win32\",\"cpu\":\"x64\"})",
+    "prefix": "E:\\sliit-groups"
+  },
+  "39 debug pnpm:skipped-optional-dependency": {
+    "details": "Error: Unsupported platform for /fsevents/2.3.2: wanted {\"cpu\":[\"any\"],\"os\":[\"darwin\"]} (current: {\"os\":\"win32\",\"cpu\":\"x64\"})",
+    "package": {
+      "id": "/fsevents/2.3.2",
+      "name": "fsevents",
+      "version": "2.3.2"
+    },
+    "prefix": "E:\\sliit-groups",
+    "reason": "unsupported_platform"
+  },
+  "40 warn pnpm:install-check": {
+    "message": "Unsupported engine for /@typescript-eslint/eslint-plugin/5.10.2_3e19df30e549eb9672c3b79dc40c1d5f: wanted: {\"node\":\"^12.22.0 || ^14.17.0 || >=16.0.0\"} (current: {\"node\":\"v14.15.4\",\"pnpm\":\"6.21.1\"})",
+    "prefix": "E:\\sliit-groups"
+  },
+  "41 error pnpm": {
+    "code": "ERR_PNPM_UNSUPPORTED_ENGINE",
+    "packageId": "/@typescript-eslint/eslint-plugin/5.10.2_3e19df30e549eb9672c3b79dc40c1d5f",
+    "wanted": {
+      "node": "^12.22.0 || ^14.17.0 || >=16.0.0"
+    },
+    "current": {
+      "node": "v14.15.4",
+      "pnpm": "6.21.1"
+    },
+    "err": {
+      "name": "pnpm",
+      "message": "Unsupported engine for /@typescript-eslint/eslint-plugin/5.10.2_3e19df30e549eb9672c3b79dc40c1d5f: wanted: {\"node\":\"^12.22.0 || ^14.17.0 || >=16.0.0\"} (current: {\"node\":\"v14.15.4\",\"pnpm\":\"6.21.1\"})",
+      "code": "ERR_PNPM_UNSUPPORTED_ENGINE",
+      "stack": "pnpm: Unsupported engine for /@typescript-eslint/eslint-plugin/5.10.2_3e19df30e549eb9672c3b79dc40c1d5f: wanted: {\"node\":\"^12.22.0 || ^14.17.0 || >=16.0.0\"} (current: {\"node\":\"v14.15.4\",\"pnpm\":\"6.21.1\"})\n    at checkEngine (C:\\Users\\navan\\AppData\\Roaming\\npm\\node_modules\\pnpm\\dist\\pnpm.cjs:36022:16)\n    at checkPackage (C:\\Users\\navan\\AppData\\Roaming\\npm\\node_modules\\pnpm\\dist\\pnpm.cjs:38110:104)\n    at packageIsInstallable (C:\\Users\\navan\\AppData\\Roaming\\npm\\node_modules\\pnpm\\dist\\pnpm.cjs:38080:20)\n    at pkgAllDeps (C:\\Users\\navan\\AppData\\Roaming\\npm\\node_modules\\pnpm\\dist\\pnpm.cjs:107382:98)\n    at pickPkgsWithAllDeps (C:\\Users\\navan\\AppData\\Roaming\\npm\\node_modules\\pnpm\\dist\\pnpm.cjs:107353:7)\n    at filterByImportersAndEngine (C:\\Users\\navan\\AppData\\Roaming\\npm\\node_modules\\pnpm\\dist\\pnpm.cjs:107322:52)\n    at exports2.default (C:\\Users\\navan\\AppData\\Roaming\\npm\\node_modules\\pnpm\\dist\\pnpm.cjs:111486:89)\n    at async _install (C:\\Users\\navan\\AppData\\Roaming\\npm\\node_modules\\pnpm\\dist\\pnpm.cjs:115152:15)\n    at async mutateModules (C:\\Users\\navan\\AppData\\Roaming\\npm\\node_modules\\pnpm\\dist\\pnpm.cjs:115101:22)\n    at async install (C:\\Users\\navan\\AppData\\Roaming\\npm\\node_modules\\pnpm\\dist\\pnpm.cjs:115059:24)"
+    }
+  }
+}

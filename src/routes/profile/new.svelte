@@ -65,8 +65,8 @@
 				uid: auth.currentUser.uid,
 				time: serverTimestamp(),
 				promoted: false
-			}).then(() => {
-				goto('/');
+			}).then((doc) => {
+				goto(`/${doc.id}`);
 			});
 		} catch (e) {
 			console.error('Error adding document: ', e);

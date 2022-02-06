@@ -3,8 +3,6 @@
 	import { goto } from '$app/navigation';
 	import { onMount } from 'svelte';
 	import { auth } from '../../ts/firebase';
-	import Nav from '$lib/components/Nav.svelte';
-	import { page } from '$app/stores';
 
 	let authenticated = false;
 
