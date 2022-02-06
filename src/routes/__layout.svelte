@@ -1,7 +1,12 @@
 <script>
+	import '@fontsource/open-sans';
 	import '../app.css';
 	import Nav from '$lib/components/Nav.svelte';
 </script>
+
+<svelte:head>
+	<title>SLIIT Groups</title>
+</svelte:head>
 
 <div>
 	<Nav />
