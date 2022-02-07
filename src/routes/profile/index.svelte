@@ -1,5 +1,6 @@
 <script>
 	import { auth, firestore } from '../../ts/firebase';
+	import { signOut } from 'firebase/auth';
 	import { query, orderBy, collection, getDocs, where } from 'firebase/firestore';
 	import { doc, deleteDoc } from 'firebase/firestore';
 
@@ -32,8 +33,24 @@
 			});
 		}
 	};
+
+	const logout = () => {
+		signOut(auth)
+			.then(() => {
+				goto('/login');
+			})
+			.catch((error) => {
+				console.log(error);
+			});
+	};
 </script>
 
+<div
+	class="py-2 flex justify-end text-sm hover:text-sky-300 transition-colors duration-300 ease-in cursor-pointer "
+	on:click={logout}
+>
+	Logout
+</div>
 <div class="text-2xl text-sky-500 font-bold">Hello {auth?.currentUser?.displayName}</div>
 <div class="text-lg text-white mt-8">Your Groups</div>
 
