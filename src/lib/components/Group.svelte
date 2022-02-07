@@ -18,7 +18,7 @@
 		{values?.description || ''}
 	</div>
 
-	<div class="w-full flex justify-between gap-3 leading-4 mt-4 text-sm text-zinc-300">
+	<div class="w-full flex justify-between gap-3 leading-5 mt-4 text-sm text-zinc-300">
 		<div>
 			<div class="font-bold uppercase text-sky-500">Contact</div>
 			<div>{values?.leaderName || ''}</div>
