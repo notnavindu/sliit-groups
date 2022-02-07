@@ -34,6 +34,7 @@
   "type": "module",
   "dependencies": {
     "@fontsource/open-sans": "^4.5.4",
-    "firebase": "^9.6.5"
+    "firebase": "^9.6.5",
+    "svelte-icons": "^2.1.0"
   }
 }
