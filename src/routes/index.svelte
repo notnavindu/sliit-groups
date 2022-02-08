@@ -34,6 +34,11 @@
 	};
 </script>
 
+<div class="text-lg">
+	Looking for a <span class="text-sky-200">project group</span> <br /> or a
+	<span class="text-sky-200">research group?</span> <br /> Start here.
+</div>
+
 <!-- Filters -->
 <div class="grid grid-cols-2 w-full gap-4">
 	<div>
