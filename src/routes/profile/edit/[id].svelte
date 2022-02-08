@@ -141,22 +141,14 @@
 		<option class="bg-black focus:bg-gray-800" value="Mix">Mix</option>
 	</select>
 
+	<TextInput label="Your" placeholder="Sarath Semicolonsinghe" bind:value={values.leaderName} />
 	<TextInput
-		label="Team Leader"
-		placeholder="Sarath Semicolonsinghe"
-		bind:value={values.leaderName}
-	/>
-	<TextInput
-		label="Team Leader Phone Number"
+		label="Your Phone Number"
 		type="text"
 		placeholder="071 234 3432"
 		bind:value={values.leaderPhone}
 	/>
-	<TextInput
-		label="Team Leader Email"
-		placeholder="semicee@gmail.com"
-		bind:value={values.leaderEmail}
-	/>
+	<TextInput label="Your Email" placeholder="semicee@gmail.com" bind:value={values.leaderEmail} />
 
 	<div class="text-xl text-sky-500 font-bold mt-8 mb-4">Preview</div>
 
