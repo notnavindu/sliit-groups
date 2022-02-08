@@ -1,7 +1,9 @@
 <script>
 	import { goto } from '$app/navigation';
+	import { analytics } from '../ts/firebase';
 
-	import { getAuth, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
+	import { signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
+	import { logEvent } from 'firebase/analytics';
 	import { onMount } from 'svelte';
 	import { auth } from '../ts/firebase';
 
@@ -9,7 +11,9 @@
 
 	const actionLogin = () => {
 		const provider = new GoogleAuthProvider();
-		signInWithPopup(auth, provider);
+		signInWithPopup(auth, provider).then(() => {
+			logEvent(analytics, 'login');
+		});
 	};
 
 	onMount(() => {

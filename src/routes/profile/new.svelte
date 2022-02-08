@@ -2,7 +2,8 @@
 	import Group from '$lib/components/Group.svelte';
 	import TextInput from '$lib/components/TextInput.svelte';
 
-	import { auth, firestore } from '../../ts/firebase';
+	import { auth, firestore, analytics } from '../../ts/firebase';
+	import { logEvent } from 'firebase/analytics';
 	import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 	import { goto } from '$app/navigation';
 	import { emailRegex } from '$lib/constants/regex';
@@ -67,6 +68,7 @@
 				time: serverTimestamp(),
 				promoted: false
 			}).then((doc) => {
+				logEvent(analytics, 'create_group');
 				goto(`/${doc.id}`);
 			});
 		} catch (e) {

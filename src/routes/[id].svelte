@@ -1,6 +1,7 @@
 <script>
-	import { firestore } from '../ts/firebase';
+	import { firestore, analytics } from '../ts/firebase';
 	import { doc, getDoc } from 'firebase/firestore';
+	import { logEvent } from 'firebase/analytics';
 	import { page } from '$app/stores';
 	import Group from '$lib/components/Group.svelte';
 
@@ -14,6 +15,7 @@
 	let data;
 
 	onMount(() => {
+		logEvent(analytics, 'home');
 		const docRef = doc(firestore, 'groups', $page.params.id);
 		getDoc(docRef).then((snap) => {
 			data = snap.data();

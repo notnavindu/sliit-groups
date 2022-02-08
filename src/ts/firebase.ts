@@ -1,6 +1,6 @@
 import { browser } from '$app/env';
 import { initializeApp } from 'firebase/app';
-// import { getAnalytics } from 'firebase/analytics';
+import { getAnalytics } from 'firebase/analytics';
 import { getAuth } from 'firebase/auth';
 
 import { getFirestore } from 'firebase/firestore';
@@ -17,7 +17,7 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = browser && initializeApp(firebaseConfig);
-// const analytics = browser && getAnalytics(app);
 
 export const auth = browser ? getAuth(app) : null;
 export const firestore = browser ? getFirestore(app) : null;
+export const analytics = browser && getAnalytics(app);
