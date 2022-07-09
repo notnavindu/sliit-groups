@@ -8,6 +8,9 @@
 	import Delete from '$lib/icons/delete.icon.svelte';
 	import NewFab from '$lib/components/NewFab.svelte';
 	import Edit from '$lib/icons/edit.icon.svelte';
+	import FaArrowLeft from 'svelte-icons/fa/FaArrowLeft.svelte';
+	import FaSignOutAlt from 'svelte-icons/fa/FaSignOutAlt.svelte';
+
 	import { goto } from '$app/navigation';
 
 	let data;
@@ -45,13 +48,12 @@
 	};
 </script>
 
-<div
-	class="py-2 flex justify-end text-sm hover:text-sky-300 transition-colors duration-300 ease-in cursor-pointer "
-	on:click={logout}
->
-	Logout
+<div class="w-full flex justify-between mb-8">
+	<div class="w-6 cursor-pointer" on:click={() => goto('/')}><FaArrowLeft /></div>
+	<div class="w-6 cursor-pointer" on:click={logout} title="Log out"><FaSignOutAlt /></div>
 </div>
-<div class="text-2xl text-sky-500 font-bold">Hello {auth?.currentUser?.displayName}</div>
+
+<div class="text-2xl text-sky-500 font-bold">Hello, {auth?.currentUser?.displayName}</div>
 <div class="text-lg text-white mt-8">Your Groups</div>
 
 <div class:blur-sm={loading}>
