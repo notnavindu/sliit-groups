@@ -70,9 +70,3 @@
 		<div class="absolute w-12 h-12 bg-white rounded-full animate-ping" />
 	</div>
 {/if}
-
-<style lang="postcss">
-	.chip {
-		@apply h-7 px-2 flex items-center justify-center rounded-md whitespace-nowrap text-sm font-bold;
-	}
-</style>

@@ -1,8 +1,12 @@
-<script>
+<script lang="ts">
 	import { auth, firestore } from '../../ts/firebase';
 	import { signOut } from 'firebase/auth';
 	import { query, orderBy, collection, getDocs, where } from 'firebase/firestore';
 	import { doc, deleteDoc } from 'firebase/firestore';
+
+	import dayjs from 'dayjs';
+	import relativeTime from 'dayjs/plugin/relativeTime';
+	dayjs.extend(relativeTime);
 
 	import { onMount } from 'svelte';
 	import Delete from '$lib/icons/delete.icon.svelte';
@@ -13,7 +17,7 @@
 
 	import { goto } from '$app/navigation';
 
-	let data;
+	let data: any;
 	let loading = true;
 
 	onMount(async () => {
@@ -26,7 +30,16 @@
 		let docSnap = await getDocs(q);
 
 		data = docSnap.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
-		loading = false;
+		data = data.map((group) => ({
+			...group,
+			isExpired: dayjs().isAfter(dayjs(group.time.seconds * 1000).add(1, 'month'))
+		}));
+
+		console.log(data);
+
+		Promise.all([data]).then(() => {
+			loading = false;
+		});
 	};
 
 	const deleteGroup = (id) => {
@@ -57,44 +70,59 @@
 <div class="text-2xl text-sky-500 font-bold">Hello, {auth?.currentUser?.displayName}</div>
 <div class="text-lg text-white mt-8">Your Groups</div>
 
-<div class:blur-sm={loading}>
-	{#if data}
-		{#if data.length === 0}
-			<div class="mt-8 text-zinc-600">
-				<div>You haven't created any groups</div>
-				<div>You can create one <a href="/profile/new" class="text-sky-500">here.</a></div>
+{#if loading}
+	<div class="w-full px-3 py-2 bg-zinc-800 mt-2 rounded-md h-14 animate-pulse" />
+	<div class="w-full px-3 py-2 bg-zinc-800 mt-2 rounded-md h-14 animate-pulse" />
+	<div class="w-full px-3 py-2 bg-zinc-800 mt-2 rounded-md h-14 animate-pulse" />
+{:else}
+	<div class:blur-sm={loading}>
+		{#if data}
+			{#if data.length === 0}
+				<div class="mt-8 text-zinc-600">
+					<div>You haven't created any groups</div>
+					<div>You can create one <a href="/profile/new" class="text-sky-500">here.</a></div>
+				</div>
+			{/if}
+
+			{#each data as item}
+				<div class="w-full px-3 py-2 bg-zinc-800 mt-2 rounded-md flex gap-5 justify-between">
+					<div>
+						<div class="font-bold text-sky-500">
+							<a href={`/${item.id}`}>{item.name}</a>
+						</div>
+						<div class="text-xs text-zinc-300">{item.description}</div>
+						<div class="text-xs opacity-60 mt-3">
+							{#if item.isExpired}
+								<div class="text-red-400">Expired</div>
+							{:else}
+								Expires on {dayjs(item.time.seconds * 1000)
+									.add(1, 'month')
+									.format('D MMM YYYY')}
+							{/if}
+						</div>
+					</div>
+					<div class="flex gap-4">
+						<div
+							class="w-4 flex items-center justify-center text-white cursor-pointer"
+							on:click={() => goto(`/profile/edit/${item.id}`)}
+						>
+							<Edit />
+						</div>
+						<div
+							class="w-4 flex items-center justify-center text-red-500 cursor-pointer"
+							on:click={() => deleteGroup(item.id)}
+						>
+							<Delete />
+						</div>
+					</div>
+				</div>
+			{/each}
+		{:else}
+			<div class="w-full h-full absolute top-0 left-0 grid place-content-center ">
+				<div class="w-114 h-14 rounded-full bg-white animate-ping" />
 			</div>
 		{/if}
-
-		{#each data as item}
-			<div class="w-full px-3 py-2 bg-zinc-800 mt-2 rounded-md flex gap-5 justify-between">
-				<div>
-					<div class="font-bold text-sky-500">
-						<a href={`/${item.id}`}>{item.name}</a>
-					</div>
-					<div class="text-xs text-zinc-300">{item.description}</div>
-				</div>
-				<div class="flex gap-4">
-					<div
-						class="w-4 flex items-center justify-center text-white cursor-pointer"
-						on:click={() => goto(`/profile/edit/${item.id}`)}
-					>
-						<Edit />
-					</div>
-					<div
-						class="w-4 flex items-center justify-center text-red-500 cursor-pointer"
-						on:click={() => deleteGroup(item.id)}
-					>
-						<Delete />
-					</div>
-				</div>
-			</div>
-		{/each}
-	{:else}
-		<div class="w-full h-full absolute top-0 left-0 grid place-content-center ">
-			<div class="w-114 h-14 rounded-full bg-white animate-ping" />
-		</div>
-	{/if}
-</div>
+	</div>
+{/if}
 
 <NewFab />
