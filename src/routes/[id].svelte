@@ -32,7 +32,7 @@
 
 	<Group values={data} />
 	<div class="w-full flex items-center justify-center mt-6 gap-4">
-		<!-- Call -->
+		<!-- Call btn -->
 		<a href={`tel:${data.leaderPhone}`}>
 			<div
 				class="w-16 h-16 bg-sky-500 hover:scale-105 transition-all rounded-full flex items-center justify-center"
