@@ -26,7 +26,7 @@
 </script>
 
 {#if data}
-	<div class="w-full flex justify-between mb-8">
+	<div class="w-full flex justify-between mb-8 ">
 		<div class="w-6 cursor-pointer" on:click={() => window.history.back()}><FaArrowLeft /></div>
 	</div>
 
