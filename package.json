@@ -2,7 +2,7 @@
 	"name": "sliit-groups",
 	"version": "0.0.1",
 	"scripts": {
-		"dev": "vite dev",
+		"dev": "vite dev --port 3000",
 		"dev:host": "vite dev --host",
 		"build": "vite build",
 		"package": "vite package",
@@ -34,7 +34,6 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@fontsource/open-sans": "^4.5.4",
 		"dayjs": "^1.11.3",
 		"firebase": "^9.6.5",
 		"svelte-icons": "^2.1.0"

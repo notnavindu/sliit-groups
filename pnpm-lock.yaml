@@ -1,7 +1,6 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@fontsource/open-sans': ^4.5.4
   '@sveltejs/adapter-auto': next
   '@sveltejs/kit': next
   '@typescript-eslint/eslint-plugin': ^5.10.1
@@ -25,7 +24,6 @@ specifiers:
   vite: ^3.0.0
 
 dependencies:
-  '@fontsource/open-sans': 4.5.4
   dayjs: 1.11.3
   firebase: 9.6.5
   svelte-icons: 2.1.0
@@ -539,10 +537,6 @@ packages:
 
   /@firebase/webchannel-wrapper/0.6.1:
     resolution: {integrity: sha512-9FqhNjKQWpQ3fGnSOCovHOm+yhhiorKEqYLAfd525jWavunDJcx8rOW6i6ozAh+FbwcYMkL7b+3j4UR/30MpoQ==}
-    dev: false
-
-  /@fontsource/open-sans/4.5.4:
-    resolution: {integrity: sha512-iaEuU7l3VGA/bqWW9UsBD2bgFwCwDFwKlmOUft4Jps3pD3Zc9POMNYV0+mNyKbA4OIcIice32l+BMif8vY6pdg==}
     dev: false
 
   /@grpc/grpc-js/1.5.4:
