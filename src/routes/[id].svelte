@@ -4,6 +4,7 @@
 	import { logEvent } from 'firebase/analytics';
 	import { page } from '$app/stores';
 	import Group from '$lib/components/Group.svelte';
+	import FaArrowLeft from 'svelte-icons/fa/FaArrowLeft.svelte';
 
 	import MdCall from 'svelte-icons/md/MdCall.svelte';
 	import MdEmail from 'svelte-icons/md/MdEmail.svelte';
@@ -25,6 +26,10 @@
 </script>
 
 {#if data}
+	<div class="w-full flex justify-between mb-8">
+		<div class="w-6 cursor-pointer" on:click={() => window.history.back()}><FaArrowLeft /></div>
+	</div>
+
 	<Group values={data} />
 	<div class="w-full flex items-center justify-center mt-6 gap-4">
 		<!-- Call -->

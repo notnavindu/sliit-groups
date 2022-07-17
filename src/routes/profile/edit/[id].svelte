@@ -23,7 +23,6 @@
 		getDoc(docRef).then((snap) => {
 			data = snap.data();
 			values = snap.data();
-			console.log(snap.data());
 		});
 	});
 
@@ -70,7 +69,7 @@
 				time: serverTimestamp(),
 				promoted: false
 			}).then((doc) => {
-				goto(`/${$page.params.id}`);
+				goto(`/${$page.params.id}`, { replaceState: true });
 			});
 		} catch (e) {
 			console.error('Error adding document: ', e);
