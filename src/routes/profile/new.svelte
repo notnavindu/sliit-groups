@@ -51,7 +51,7 @@
 		}
 
 		if (String(values.leaderPhone).length !== 10) {
-			error = 'Phone number must be 10 digits';
+			error = 'Invalid phone number';
 			return;
 		}
 
@@ -80,13 +80,13 @@
 
 <div class="text-2xl text-sky-500 font-bold">Add your group</div>
 
-<TextInput label="Group Name" placeholder="Silicon Dealers" bind:value={values.name} />
+<TextInput label="Group Name" placeholder="Eg: Silicon Dealers" bind:value={values.name} />
 
 <label class="flex flex-col mt-8 gap-2">
 	<span class="text-sky-500">Group Description</span>
 	<textarea
 		bind:value={values.description}
-		placeholder="About, Requirements, Team Culture..."
+		placeholder="About group, Requirements to join, Team Culture..."
 		class="border border-gray-400 focus:outline-none focus:border-sky-500 outline-2 bg-transparent rounded-md w-full max-w-xl px-2 py-3"
 	/>
 </label>
@@ -128,14 +128,14 @@
 	<option class="bg-black focus:bg-gray-800" value="Mix">Mix</option>
 </select>
 
-<TextInput label="Your name" placeholder="Sarath Semicolonsinghe" bind:value={values.leaderName} />
+<TextInput label="Your name (leader)" bind:value={values.leaderName} />
 <TextInput
 	label="Your Phone Number"
 	type="text"
 	placeholder="071 234 3432"
 	bind:value={values.leaderPhone}
 />
-<TextInput label="Your Email" placeholder="semicee@gmail.com" bind:value={values.leaderEmail} />
+<TextInput label="Your Email" bind:value={values.leaderEmail} />
 
 <div class="text-xl text-sky-500 font-bold mt-8 mb-4">Preview</div>
 

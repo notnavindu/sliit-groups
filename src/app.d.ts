@@ -24,4 +24,5 @@ interface group {
 	leaderName: string;
 	leaderPhone: number;
 	leaderEmail: string;
+	time?: any;
 }

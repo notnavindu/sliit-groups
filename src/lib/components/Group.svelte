@@ -1,10 +1,21 @@
 <script lang="ts">
+	import dayjs from 'dayjs';
+	import relativeTime from 'dayjs/plugin/relativeTime';
+
 	export let values: group;
+
+	dayjs.extend(relativeTime);
 </script>
 
 <div class="w-full bg-zinc-800 p-3 rounded-md border border-sky-700">
-	<div class="flex justify-between gap-4">
+	<div class="flex flex-col">
 		<div class="font-bold text-lg leading-6">{values?.name || ''}</div>
+
+		{#if values?.time}
+			<div class="text-xs opacity-40 italic">
+				Posted {dayjs(values.time.seconds * 1000).fromNow()}
+			</div>
+		{/if}
 	</div>
 
 	<div class="flex flex-wrap gap-1 mt-2">

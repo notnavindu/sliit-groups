@@ -3,8 +3,10 @@
 	import NewFab from '$lib/components/NewFab.svelte';
 
 	import { firestore } from '../ts/firebase';
+	import dayjs from 'dayjs';
 	import { query, orderBy, collection, getDocs, where } from 'firebase/firestore';
 	import { onMount } from 'svelte';
+
 	import Button from '$lib/components/Button.svelte';
 
 	let data;
@@ -22,6 +24,7 @@
 		const q = query(
 			groupRef,
 			orderBy('time', 'desc'),
+			where('time', '>=', dayjs().subtract(1, 'month').toDate()),
 			where('year', '==', values.year),
 			where('semester', '==', values.semester),
 			where('specialization', '==', values.specialization),

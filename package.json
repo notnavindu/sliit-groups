@@ -35,6 +35,7 @@
 	"type": "module",
 	"dependencies": {
 		"@fontsource/open-sans": "^4.5.4",
+		"dayjs": "^1.11.3",
 		"firebase": "^9.6.5",
 		"svelte-icons": "^2.1.0"
 	}

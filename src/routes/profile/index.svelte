@@ -24,6 +24,7 @@
 		const groupRef = collection(firestore, 'groups');
 		const q = query(groupRef, where('uid', '==', auth.currentUser.uid));
 		let docSnap = await getDocs(q);
+
 		data = docSnap.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
 		loading = false;
 	};
